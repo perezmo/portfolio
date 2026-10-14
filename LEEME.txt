@@ -16,4 +16,4 @@ PARA PERSONALIZAR:
 - Email: sustituye hello@example.com en index.html.
 
 Las fuentes de Google requieren conexión; sin conexión se emplean las fuentes de reserva.
-Portfolio actualizado en prueba1
+Portfolio actualizado en prueba2
