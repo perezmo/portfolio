@@ -1,0 +1,18 @@
+PORTFOLIO WEB — IRENE PÉREZ MORALES
+
+ARCHIVOS:
+- index.html: estructura y contenido de la web.
+- style.css: colores, tipografías, tamaños, espaciado y responsive.
+- script.js: proyectos, galerías y ventanas emergentes.
+- assets/: imágenes de los proyectos.
+
+PARA ABRIR:
+Abre index.html en Safari o Chrome, manteniendo todos los archivos y la carpeta assets juntos.
+
+PARA PERSONALIZAR:
+- Colores: modifica las variables :root al principio de style.css.
+- Textos: edita index.html.
+- Proyectos y descripciones: edita el array projects al principio de script.js.
+- Email: sustituye hello@example.com en index.html.
+
+Las fuentes de Google requieren conexión; sin conexión se emplean las fuentes de reserva.
