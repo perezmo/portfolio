@@ -124,86 +124,36 @@ document.addEventListener('keydown', e => {
     }
 });
 
+/* Animaciones al entrar en pantalla */
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-/* =====================================
-   SCROLL REVEAL ANIMATIONS
-===================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    // No activar animaciones si el usuario
-    // tiene configurado movimiento reducido.
-    if (reduceMotion) return;
-
-    // Seleccionamos los elementos a animar.
-    const elements = [
-        ".section-head",
-        ".project-card",
-        ".about-heading",
-        ".about-block",
-        ".about-photo-column",
-        ".footer-inner .eyebrow",
-        ".footer-inner h2",
-        ".contact-links",
-        ".footer-inner .bottom"
+    const selectors = [
+        '.section-head', '.project-card', '.about-heading', '.about-block',
+        '.about-photo-column', '.footer-inner .eyebrow', '.footer-inner h2',
+        '.contact-links', '.footer-inner .bottom'
     ];
 
-    // Añadir la clase reveal a cada elemento.
-    elements.forEach(selector => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -35px 0px' });
+
+    selectors.forEach(selector => {
         document.querySelectorAll(selector).forEach((element, index) => {
-
-            element.classList.add("reveal");
-
-            // Alternar retrasos en proyectos y habilidades.
-            if (
-                selector === ".project-card" ||
-                selector === ".about-block"
-            ) {
-                element.style.transitionDelay =
-                    `${(index % 3) * 0.12}s`;
+            element.classList.add('reveal');
+            if (selector === '.project-card' || selector === '.about-block') {
+                element.style.transitionDelay = `${(index % 3) * 0.12}s`;
             }
-
-            // La imagen aparece desde la derecha.
-            if (selector === ".about-photo-column") {
-                element.classList.add("reveal-right");
+            if (selector === '.about-photo-column') {
+                element.classList.add('reveal-right');
             }
+            observer.observe(element);
         });
     });
 
-    // Activamos el sistema de animaciones.
-    document.documentElement.classList.add(
-        "scroll-animations"
-    );
-
-    // Detectamos cuándo entran en pantalla.
-    const observer = new IntersectionObserver(
-        (entries) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("visible");
-
-                    // Solo se anima una vez.
-                    observer.unobserve(entry.target);
-                }
-            });
-
-        },
-        {
-            threshold: 0.08,
-            rootMargin: "0px 0px -35px 0px"
-        }
-    );
-
-    // Observar todos los elementos.
-    document.querySelectorAll(".reveal").forEach(element => {
-        observer.observe(element);
-    });
-
+    document.documentElement.classList.add('scroll-animations');
 });
