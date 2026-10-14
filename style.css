@@ -1574,3 +1574,57 @@ html.scroll-animations .reveal-right.visible {
         transition: none;
     }
 }
+
+
+/* NUEVA PALETA VERDE */
+
+:root {
+    --yellow: #B9D531;
+}
+
+/* ESTRELLAS Y DETALLES */
+.logo span,
+.marquee-group b,
+.section-head h2 span,
+.about-heading h2 span,
+.star,
+.about-sun {
+    color: #B9D531;
+}
+
+/* FECHAS */
+.about-date {
+    color: #78951B;
+}
+
+/* TÍTULOS */
+.about h2 em,
+.small-number {
+    color: #78951B;
+}
+
+/* BOTÓN PRINCIPAL */
+.hero-actions .btn:hover {
+    background: #B9D531;
+    color: #161616;
+}
+
+/* LÍNEAS ANIMADAS */
+.hero-actions .text-link::after {
+    background: #B9D531;
+}
+
+/* SUBRAYADO */
+.scribble {
+    text-decoration-color: #B9D531;
+}
+
+/* PUNTITOS DE HABILIDADES */
+.software-tag::before {
+    background: #B9D531;
+}
+
+/* SELECCIÓN DE TEXTO */
+::selection {
+    background: #B9D531;
+}
