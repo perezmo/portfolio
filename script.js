@@ -61,7 +61,7 @@ projects.forEach((p, i) => {
     button.innerHTML = `
         <div class="preview">
             <img src="${asset(p.img)}" alt="Vista previa del proyecto ${p.title}" loading="lazy">
-            <span class="view" aria-hidden="true">↗</span>
+            <span class="view" aria-hidden="true"><svg class="icon icon-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19L19 5M5 5h14v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
         <div class="project-info">
             <div>
