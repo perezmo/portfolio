@@ -32,8 +32,21 @@ a {
 }
 
 button {
+    -webkit-appearance: none;
+    appearance: none;
+    color: var(--black);
+    border: 0;
+    border-radius: 999px;
     font: inherit;
     cursor: pointer;
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    vertical-align: -0.125em;
 }
 
 ::selection {
@@ -150,6 +163,8 @@ h1 span {
 }
 
 .btn {
+    border: 0;
+    border-radius: 999px;
     background: var(--black);
     color: white;
     text-decoration: none;
@@ -304,6 +319,7 @@ h1 span {
 }
 
 .project-button {
+    border-radius: 24px;
     width: 100%;
     padding: 0;
     border: 0;
@@ -313,6 +329,7 @@ h1 span {
 }
 
 .preview {
+    border-radius: 24px;
     overflow: hidden;
     aspect-ratio: 1.38;
     background: #eae8e0;
@@ -336,7 +353,7 @@ h1 span {
     bottom: 18px;
     right: 18px;
     background: var(--paper);
-    border: 1px solid #111;
+    border: 0;
     border-radius: 100%;
     width: 58px;
     height: 58px;
@@ -360,6 +377,7 @@ h1 span {
 }
 
 .project-info h3 {
+    color: var(--black);
     font: 700 clamp(22px, 3vw, 35px)/1.06 'Space Grotesk', sans-serif;
     letter-spacing: -1.4px;
     margin: 0 0 7px;
@@ -710,6 +728,9 @@ footer .bottom {
 }
 
 .close {
+    display: grid;
+    place-items: center;
+    padding: 0;
     height: 45px;
     width: 45px;
     flex-shrink: 0;
